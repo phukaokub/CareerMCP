@@ -1,0 +1,42 @@
+# ============================================================
+#  CareerMCP – MCP Server Configuration Template
+#  Copy this file to config/mcp_servers.yaml and configure it.
+# ============================================================
+
+# Each entry describes one MCP server the agent will connect to.
+# "command" / "args" are used when the server is a local process.
+# "url" is used for SSE (Server-Sent Events) remote servers.
+
+servers:
+  # ── LinkedIn MCP server ─────────────────────────────────────
+  linkedin:
+    # Use a local LinkedIn MCP server (e.g. github.com/alfonsograziano/linkedin-mcp)
+    transport: stdio            # stdio | sse
+    command: npx
+    args:
+      - "-y"
+      - "linkedin-mcp"
+    env:
+      LINKEDIN_EMAIL: ""        # Fill in or set via .env
+      LINKEDIN_PASSWORD: ""     # Fill in or set via .env
+    # -- OR use an SSE remote server:
+    # transport: sse
+    # url: "http://localhost:3001/sse"
+
+  # ── JobsDB MCP server ───────────────────────────────────────
+  jobsdb:
+    transport: stdio
+    command: npx
+    args:
+      - "-y"
+      - "jobsdb-mcp"
+    env:
+      JOBSDB_API_KEY: ""        # Fill in or set via .env
+    # transport: sse
+    # url: "http://localhost:3002/sse"
+
+# Agent settings
+agent:
+  model: "claude-opus-4-5"     # Anthropic model to use
+  max_iterations: 30           # Max tool-call loops per run
+  temperature: 0.2
