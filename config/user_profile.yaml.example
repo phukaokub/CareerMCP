@@ -1,0 +1,100 @@
+# ============================================================
+#  CareerMCP – User Profile Template
+#  Copy this file to config/user_profile.yaml and fill it in.
+# ============================================================
+
+# ── Personal information ─────────────────────────────────────
+personal:
+  full_name: "Your Full Name"
+  email: "you@example.com"
+  phone: "+66-XX-XXX-XXXX"
+  location: "Bangkok, Thailand"
+  linkedin_url: "https://www.linkedin.com/in/your-profile"
+  portfolio_url: ""                 # optional
+
+# ── Skills ───────────────────────────────────────────────────
+skills:
+  # List every technology, language, framework, tool you know
+  technical:
+    - Python
+    - JavaScript
+    - TypeScript
+    - React
+    - Node.js
+    - SQL
+    - Docker
+    - Kubernetes
+    - AWS
+    - Git
+  soft:
+    - Team leadership
+    - Agile / Scrum
+    - Communication
+    - Problem solving
+
+# ── Experience summary (used as the prompt context) ──────────
+experience_summary: |
+  Describe your professional background in 2-4 sentences.
+  Example: Software engineer with 5 years of experience building
+  scalable web applications, specialising in Python back-end and
+  React front-end. Led a team of 4 engineers delivering a
+  SaaS product used by 50,000 users.
+
+# ── Career goal (the AI agent will use this to rank jobs) ────
+career_goal: |
+  Describe what you want in your next role.
+  Example: Seeking a senior software engineering position at a
+  product-driven company where I can work on distributed systems
+  and mentor junior engineers. Open to remote or Bangkok-based
+  hybrid roles.
+
+# ── Working preferences ──────────────────────────────────────
+preferences:
+  job_titles:                       # Ordered by preference
+    - Senior Software Engineer
+    - Staff Engineer
+    - Tech Lead
+  employment_type:
+    - full_time
+    - contract                      # remove if not interested
+  work_mode:
+    - remote
+    - hybrid
+    - on_site                       # remove if not interested
+  locations:                        # Cities / countries to search
+    - Bangkok
+    - Remote
+  salary:
+    currency: THB
+    min: 80000                      # monthly gross
+    max: 200000
+  industries:                       # Preferred industries
+    - Technology
+    - Fintech
+    - E-commerce
+  company_size:                     # small / medium / large / any
+    - medium
+    - large
+  blacklisted_companies: []         # Companies to skip
+
+# ── Auto-apply settings ──────────────────────────────────────
+auto_apply:
+  enabled: true
+  # Minimum match score (0–100) required before auto-applying
+  min_match_score: 70
+  # Maximum applications per run
+  max_applications_per_run: 10
+  # Cover letter template variables available: {job_title},
+  # {company}, {match_reasons}, {career_goal}
+  cover_letter_template: |
+    Dear Hiring Team at {company},
+
+    I am excited to apply for the {job_title} position.
+    {match_reasons}
+
+    {career_goal}
+
+    Thank you for considering my application.
+
+    Best regards,
+    {full_name}

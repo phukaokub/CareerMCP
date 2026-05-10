@@ -1,0 +1,4 @@
+# This directory is used by CareerMCP to store the SQLite database.
+# The database file itself is git-ignored; this placeholder keeps the
+# directory in version control so the application can write to it
+# without needing to create the directory manually.
